@@ -159,7 +159,7 @@ vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
-
+require 'keymaps'
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -618,20 +618,20 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
-        lua_ls = {
+        -- lua_ls = {
           -- cmd = {...},
           -- filetypes = { ...},
           -- capabilities = {},
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
+          --settings = {
+          --  Lua = {
+          --    completion = {
+          --      callSnippet = 'Replace',
+          --    },
               -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
               -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
+          --  },
+          -- },
+        --},
       }
 
       -- Ensure the servers and tools above are installed
