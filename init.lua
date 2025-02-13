@@ -270,10 +270,6 @@ require('lazy').setup({
   -- which loads which-key before all the UI elements are loaded. Events can be
   -- normal autocommands events (`:help autocmd-events`).
   --
-<<<<<<< Updated upstream
-  -- Then, because we use the `opts` key (recommended), the configuration runs
-  -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
-=======
   -- Then, because we use the `config` key, the configuration only runs
   -- after the plugin has been loaded:
   --  config = function() ... end
@@ -283,8 +279,6 @@ require('lazy').setup({
       -- add any options here
     },
   },
->>>>>>> Stashed changes
-
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
@@ -645,22 +639,6 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
-<<<<<<< Updated upstream
-        lua_ls = {
-          -- cmd = { ... },
-          -- filetypes = { ... },
-          -- capabilities = {},
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = 'Replace',
-              },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-              -- diagnostics = { disable = { 'missing-fields' } },
-            },
-          },
-        },
-=======
         -- lua_ls = {
         -- cmd = {...},
         -- filetypes = { ...},
@@ -675,7 +653,6 @@ require('lazy').setup({
         --  },
         -- },
         --},
->>>>>>> Stashed changes
       }
 
       -- Ensure the servers and tools above are installed
@@ -954,37 +931,17 @@ require('lazy').setup({
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
-
-<<<<<<< Updated upstream
-  -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
-=======
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
     config = true,
   },
-  -- {
-  --   'aivz-gerr/aivz-gerr.yhn',
-  --   irefvba = '*',
-  --   lazy = false,
-  --   dependencies = {
-  --     'nvim-tree/nvim-web-devicons',
-  --   },
-  --   config = function()
-  --     require('nvim-tree').setup {}
-  --   end,
-  -- },
-  -- {
-  --   'nvim-tree/nvim-web-devicons',
-  --   opts = {},
-  -- },
   {
     'akinsho/toggleterm.nvim',
     version = '*',
     config = true,
   },
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
->>>>>>> Stashed changes
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
 
@@ -1004,7 +961,7 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
-  -- { import = 'custom.plugins' },
+  { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
