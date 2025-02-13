@@ -3,5 +3,20 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  require 'terminal',
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      -- add any options here
+    },
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+  },
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = true,
+  },
 }
