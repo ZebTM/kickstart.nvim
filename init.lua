@@ -91,7 +91,10 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
-vim.g.have_nerd_font = false
+vim.g.have_nerd_font = true
+
+-- vim.g.loaded_netrw = 1
+-- vim.g.loaded_netrwPlugin = 1
 
 -- [[ Setting options ]]
 -- See `:help vim.opt`
@@ -158,7 +161,8 @@ vim.opt.scrolloff = 10
 
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
-
+require 'keymaps'
+-- require 'custom'
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
@@ -266,8 +270,20 @@ require('lazy').setup({
   -- which loads which-key before all the UI elements are loaded. Events can be
   -- normal autocommands events (`:help autocmd-events`).
   --
+<<<<<<< Updated upstream
   -- Then, because we use the `opts` key (recommended), the configuration runs
   -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
+=======
+  -- Then, because we use the `config` key, the configuration only runs
+  -- after the plugin has been loaded:
+  --  config = function() ... end
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      -- add any options here
+    },
+  },
+>>>>>>> Stashed changes
 
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
@@ -617,9 +633,9 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
+        gopls = {},
+        pyright = {},
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
@@ -629,6 +645,7 @@ require('lazy').setup({
         -- ts_ls = {},
         --
 
+<<<<<<< Updated upstream
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
@@ -643,6 +660,22 @@ require('lazy').setup({
             },
           },
         },
+=======
+        -- lua_ls = {
+        -- cmd = {...},
+        -- filetypes = { ...},
+        -- capabilities = {},
+        --settings = {
+        --  Lua = {
+        --    completion = {
+        --      callSnippet = 'Replace',
+        --    },
+        -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+        -- diagnostics = { disable = { 'missing-fields' } },
+        --  },
+        -- },
+        --},
+>>>>>>> Stashed changes
       }
 
       -- Ensure the servers and tools above are installed
@@ -922,7 +955,36 @@ require('lazy').setup({
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
+<<<<<<< Updated upstream
   -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
+=======
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+  },
+  -- {
+  --   'aivz-gerr/aivz-gerr.yhn',
+  --   irefvba = '*',
+  --   lazy = false,
+  --   dependencies = {
+  --     'nvim-tree/nvim-web-devicons',
+  --   },
+  --   config = function()
+  --     require('nvim-tree').setup {}
+  --   end,
+  -- },
+  -- {
+  --   'nvim-tree/nvim-web-devicons',
+  --   opts = {},
+  -- },
+  {
+    'akinsho/toggleterm.nvim',
+    version = '*',
+    config = true,
+  },
+  -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
+>>>>>>> Stashed changes
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
   -- place them in the correct locations.
 
@@ -935,7 +997,7 @@ require('lazy').setup({
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
-  -- require 'kickstart.plugins.neo-tree',
+  require 'kickstart.plugins.neo-tree',
   -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
 
   -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
